@@ -1,23 +1,13 @@
-import {gql} from '@apollo/client';
-
+import { gql } from "@apollo/client";
 
 export const GET_GEN_3 = gql`
-    query getGen3 {
-        characters(filter: {village: "leaf"}) {
-          info {
-            count
-            pages
-            next
-            prev
-          }
-          results {
-            _id
-            name
-            avatarSrc
-            description
-            rank
-            village
-          }
-        }
-      }
+  query getGen3 {
+    pokemon_v2_pokemonspecies(
+      order_by: { id: asc }
+      where: { pokemon_v2_generation: { name: { _eq: "generation-iii" } } }
+    ) {
+      name
+      id
+    }
+  }
 `;
