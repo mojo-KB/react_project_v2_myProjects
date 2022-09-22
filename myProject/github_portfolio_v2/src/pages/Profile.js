@@ -28,7 +28,7 @@ function Profile( {userName} ) {
    const items = [
     {
         field: 'html_url',
-        value: <link url={profile.html_url} 
+        value: <Link url={profile.html_url} 
         title={profile.html_url} />
     }, 
     {
