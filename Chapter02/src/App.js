@@ -12,11 +12,11 @@ function App() {
       <BrowserRouter>
         <Header logo={logo} />
         <Routes>
-          <Route path='/' element={<Profile userName='octocat' />} />
-          <Route path='/projects' element={<Projects userName='octocat' />} />
+          <Route path='/' element={<Profile userName='mojo-KB' />} />
+          <Route path='/projects' element={<Projects userName='mojo-KB'/>} />
           <Route
             path='/projects/:name'
-            element={<ProjectDetail userName='octocat' />}
+            element={<ProjectDetail userName='mojo-KB' />}
           />
         </Routes>
       </BrowserRouter>

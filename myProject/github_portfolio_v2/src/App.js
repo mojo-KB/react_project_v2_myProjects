@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Profile from './pages/Profile';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Projects from './pages/Projects'
-
+import ProjectDetail from './pages/ProjectDetail'
 function App() {
   return (
     <div className="App"> 
@@ -19,6 +19,10 @@ function App() {
 
          <Route path='/projects' 
          element={ <Projects userName="mojo-KB"/>}> </Route> 
+
+
+         <Route path='/projects/:name' element={ <ProjectDetail userName='mojo-KB' />} >
+         </Route>
          
         
          </Routes>
