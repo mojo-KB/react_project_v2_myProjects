@@ -35,7 +35,7 @@ function Projects( {userName} ) {
               projects.map( (p) => ({
                 field: p.name,
                 // value: <Link url={p.html_url} title={p.html_url}/>
-                value: <RouterLink to={}>Learn more</RouterLink>
+                value: <RouterLink to={`/projects/${p.name}`}>Learn more</RouterLink>
               }))
             }/>
           </div>

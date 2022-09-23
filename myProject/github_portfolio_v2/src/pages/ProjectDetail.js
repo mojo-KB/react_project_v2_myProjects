@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 function Project( {userName} )  {
     const [loading, setLoading] = useState(false);
     const [project, setProject] = useState([]); 
-    const { name } = useParams;
+    const { name } = useParams();
 
     useEffect( () => {
         async function fetchData() {
