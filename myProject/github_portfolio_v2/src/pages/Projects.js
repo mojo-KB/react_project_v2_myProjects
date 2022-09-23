@@ -1,46 +1,47 @@
-import { useState, useEffect } from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import List from '../components/List';
+import { useState, useEffect } from 'react'
+// import Link from '../components/Link'
+import List from '../components/List'
+import {Link as RouterLink} from 'react-router-dom'
 
-function Projects({ userName }) {
+function Projects( {userName} ) {
   const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState({});
 
-  useEffect(() => {
+  useEffect( () => {
     async function fetchData() {
-      const data = await fetch(
-        `https://api.github.com/users/${userName}/repos`,
-      );
-      const result = await data.json();
+        const data = await fetch(
+          `https://api.github.com/users/${userName}/repos`
+        );
 
-      if (result) {
-        setProjects(result);
-        setLoading(false);
+        const result = await data.json();
+
+
+        if (result) {
+          setProjects(result);
+          setLoading(false);
+        }
       }
-    }
-
-    fetchData();
+      fetchData();
   }, [userName]);
 
   return (
     <div className='Projects-container'>
-      <h2>Projects</h2>
-      {loading ? (
-        <span>Loading...</span>
-      ) : (
-        <div>
-          <List
-            items={projects.map((project) => ({
-              field: project.name,
-              value: (
-                project.html_url
-              ),
-            }))}
-          />
-        </div>
-      )}
+        <h2>Projects</h2>
+        {loading ? (
+          <span>Loading...</span>
+        ) : (
+          <div> 
+            <List items={
+              projects.map( (p) => ({
+                field: p.name,
+                // value: <Link url={p.html_url} title={p.html_url}/>
+                value: <RouterLink to={}>Learn more</RouterLink>
+              }))
+            }/>
+          </div>
+        )}
     </div>
-  );
+  )
 }
 
 export default Projects;
