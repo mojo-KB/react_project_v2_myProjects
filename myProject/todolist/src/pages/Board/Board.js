@@ -62,12 +62,12 @@ function Board() {
     }, [data]);
 
 
-    function onDrop(e, landId) {
+    function onDrop(e, laneId) {
         const id = e.dataTransfer.getData('id');
 
         const updatedTasks = tasks.filter( (task) => {
             if (task.id.toString() === id) {
-                task.land = landId;
+                task.lane = laneId;
             }
             return task;
         })
@@ -79,7 +79,7 @@ function Board() {
             {lanes.map( (lane)=> (
                 <Lane 
                 key={lane.id} 
-                landId={lane.id}
+                laneId={lane.id}
                 title={lane.title} 
                 loading={loading}
                 error={error}

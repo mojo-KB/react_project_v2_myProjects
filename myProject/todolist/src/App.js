@@ -1,16 +1,20 @@
-import './App.css'
+// import './App.css'
 import Header from './components/Header/Header'
 import Board from './pages/Board/Board';
 import Backlog from './pages/Backlog/Backlog'
+import styled from 'styled-components'
 
+
+const AppWrapper = styled.div`
+  text-align: center;
+`
 function App() {
   return (
-    <div className="App">
+    <AppWrapper> 
       <Header />
       <Board />
-      <Backlog />
-    </div>
-
+      <Backlog /> 
+    </AppWrapper>
   );
 }
 
