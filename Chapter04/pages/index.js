@@ -1,6 +1,4 @@
-import Questions, {
-  getServerSideProps as getServerSidePropsQuestions,
-} from './questions';
+import Questions, { getServerSideProps as getServerSidePropsQuestions } from './questions';
 
 export function getServerSideProps(context) {
   return getServerSidePropsQuestions(context);
