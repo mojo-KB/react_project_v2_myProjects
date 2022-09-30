@@ -9,15 +9,13 @@ import ListItem from '../components/ListItem/ListItem'
 const ListItemWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    flex-direction; column;
-    margin: 2% 5%;
+    flex-direction: column;
+    margin: 2% 5%; 
 `
-
 
 function ListDetail() {
     let navigate = useNavigate();
     const {listId}  = useParams();
-
 
     const [loading, error, data] = useDataFetching(
         'https://my-json-server.typicode.com/PacktPublishing/React-Projects-Second-Edition/items/',
@@ -35,7 +33,7 @@ function ListDetail() {
             {navigate && (
                 <Navbar 
                     goBack={ ()=> navigate(-1)}
-                    opneForm={ ()=> navigate(`/list/${listId}//new`)}
+                    openForm={ ()=> navigate(`/list/${listId}//new`)}
                 />
             )}
 

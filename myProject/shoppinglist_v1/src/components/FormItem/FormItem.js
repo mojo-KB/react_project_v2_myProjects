@@ -34,6 +34,7 @@ function FormItem({id, label, type='text', placeholder='', value, handleOnChange
                 name={id}
                 id={id}
                 placeholder={placeholder}
+                value={value}
                 onChange={handleOnChange}
             />
         </FormItemWrapper>
